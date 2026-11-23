@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy · Scope Ledger</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="wrap">
+      <a class="logo" href="/" aria-label="Scope Ledger home">
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="2" width="22" height="24" rx="4" fill="#fff" stroke="#172033" stroke-width="2"/><rect x="7" y="9" width="14" height="4" rx="1" fill="#ffe15a"/><path d="M8 18h12M8 22h8" stroke="#172033" stroke-width="2" stroke-linecap="round"/></svg>
+        Scope Ledger
+      </a>
+      <nav class="nav" aria-label="Main"><a class="btn sm" href="/app.html">Check a request</a></nav>
+    </div>
+  </header>
+  <main class="wrap" style="max-width:720px; padding:64px 0 80px">
+    <h1 style="font-size:clamp(2.2rem,5vw,3.2rem); margin-bottom:24px">Privacy</h1>
+    <p class="lede">Scope Ledger is a prototype. It is designed to keep as little as possible: no accounts, no database, no tracking.</p>
+    <h2 style="font-size:1.5rem; margin:40px 0 12px">What we ask of you</h2>
+    <p>Use anonymised text. Leave out names, email addresses, phone numbers, prices and anything confidential. A package summary and a client request work just as well without them.</p>
+    <h2 style="font-size:1.5rem; margin:40px 0 12px">What happens to your text</h2>
+    <p><b>Simulation.</b> Your text is checked for length on our server and a prepared example result is shown. It is not sent to any AI provider.</p>
+    <p><b>Live AI</b> (with an access code). Your two texts are sent once over an encrypted connection from our server to Anthropic's API, which returns the analysis. Anthropic processes API data under its <a href="https://www.anthropic.com/legal/commercial-terms" rel="noopener">commercial terms</a>; see also its <a href="https://privacy.anthropic.com" rel="noopener">privacy center</a>.</p>
+    <p><b>Without a workspace.</b> Client files and ledgers stay in your own browser's storage, on your device. Clearing your browser data removes them.</p>
+    <p><b>With an agency workspace.</b> Client files, usage counters and the extras ledger are stored in your agency's workspace on Cloudflare, so your team can use them on any device. Anyone with your workspace code can see them, so share it only with your team.</p>
+    <p><b>Inbox.</b> Conversations you share from WhatsApp or Slack are stored in your workspace inbox with phone numbers and email addresses hidden. A conversation leaves the inbox when you scan it or delete it, and is removed automatically after 30 days.</p>
+    <p><b>What we never do.</b> We don't use cookies or analytics, we don't sell data, and our server logs record only technical outcomes, never the content of your texts. Under its commercial terms, Anthropic does not train its models on API inputs by default.</p>
+    <h2 style="font-size:1.5rem; margin:40px 0 12px">Limits of the result</h2>
+    <p>A Scope Ledger verdict is an operational reading of the text you provide. It can miss context that isn't in that text, such as annexes, calls or earlier agreements. It is not legal advice, and a person should review it before anything is sent to a client.</p>
+  </main>
+  <footer class="site-foot"><div class="wrap"><div><b>Scope Ledger</b>. Prototype.</div><div><a href="/">Home</a></div></div></footer>
+</body>
+</html>

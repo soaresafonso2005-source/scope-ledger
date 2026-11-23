@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connect WhatsApp and Slack · Scope Ledger</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#172033">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Caveat:wght@600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-head">
+    <div class="wrap">
+      <a class="logo" href="/" aria-label="Scope Ledger home">
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="2" width="22" height="24" rx="4" fill="#fff" stroke="#172033" stroke-width="2"/><rect x="7" y="9" width="14" height="4" rx="1" fill="#ffe15a"/><path d="M8 18h12M8 22h8" stroke="#172033" stroke-width="2" stroke-linecap="round"/></svg>
+        Scope Ledger
+      </a>
+      <nav class="nav" aria-label="Main"><a href="/privacy.html">Privacy</a><a class="btn sm" href="/app.html">Open the app</a></nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap connect">
+    <h1>Send client chats to Scope Ledger</h1>
+    <p class="lede">Your clients keep writing where they always do. Set this up once per phone or Slack workspace, and conversations land in your Scope Ledger inbox in two taps.</p>
+
+    <div id="notice" class="alert info" hidden role="status"></div>
+
+    <section class="panel connect-card" id="workspace">
+      <h2>1. Your workspace</h2>
+      <div id="ws-status"></div>
+    </section>
+
+    <section class="panel connect-card" id="iphone">
+      <h2>2. iPhone: share from WhatsApp</h2>
+      <p>Create one Shortcut on each iPhone that will send chats. It takes about five minutes.</p>
+      <ol class="steps-list">
+        <li>Open the <b>Shortcuts</b> app and tap <b>+</b> to create a new shortcut. Name it <b>Send to Scope Ledger</b>.</li>
+        <li>Tap the <b>ⓘ</b> (Details) button and turn on <b>Show in Share Sheet</b>. In the first block, “Receive <i>Any</i> input from Share Sheet”, set the types to <b>Text</b> and <b>Files</b>.</li>
+        <li>Add the action <b>Get Contents of URL</b>. Paste this address as the URL:
+          <div class="copy-row"><code id="ios-url">Sign in first to see your address</code><button type="button" class="btn ghost xs" data-copy="ios-url">Copy</button></div>
+        </li>
+        <li>Tap the arrow to show more options. Set <b>Method</b> to <b>POST</b> and <b>Request Body</b> to <b>Form</b>. Add a field of type <b>File</b>, with key <code>file</code> and value <b>Shortcut Input</b>.</li>
+        <li>Add the action <b>Show Notification</b> and choose <b>Contents of URL</b> as the text. Tap <b>Done</b>.</li>
+      </ol>
+      <h3>Using it</h3>
+      <p>In WhatsApp, open the client's chat or group, tap its name, then <b>Export Chat</b> › <b>Without Media</b>, and choose <b>Send to Scope Ledger</b> in the share sheet. You'll see “Sent to your Scope Ledger inbox”. You can also select any text, tap <b>Share</b> and choose the same shortcut.</p>
+    </section>
+
+    <section class="panel connect-card" id="android">
+      <h2>3. Android: share from WhatsApp</h2>
+      <ol class="steps-list">
+        <li>Open <span class="site-url">this site</span><b>/app.html</b> in Chrome and sign in to your workspace.</li>
+        <li>Open Chrome's menu (⋮) and tap <b>Add to Home screen</b> or <b>Install app</b>. Open Scope Ledger once from your home screen.</li>
+        <li>In WhatsApp, open the client's chat, tap ⋮ › <b>More</b> › <b>Export chat</b> › <b>Without media</b>, and choose <b>Scope Ledger</b>. The chat opens in the app, matched to the right client, ready to scan.</li>
+      </ol>
+    </section>
+
+    <section class="panel connect-card" id="slack">
+      <h2>4. Slack: send any message</h2>
+      <div id="slack-agency"></div>
+      <details class="owner">
+        <summary>Owner setup: create the Slack app (once, by whoever runs this Scope Ledger site)</summary>
+        <ol class="steps-list">
+          <li>Go to <a href="https://api.slack.com/apps" rel="noopener">api.slack.com/apps</a>, choose <b>Create New App</b> › <b>From an app manifest</b>, pick your Slack workspace and paste this manifest (YAML):
+            <pre class="manifest" id="manifest"></pre>
+            <button type="button" class="btn ghost xs" data-copy="manifest">Copy manifest</button>
+          </li>
+          <li>Create the app. In <b>Basic Information</b>, copy the <b>Client ID</b>, <b>Client Secret</b> and <b>Signing Secret</b>.</li>
+          <li>In Cloudflare, open the Pages project › <b>Settings</b> › <b>Variables and Secrets</b> and add three secrets: <code>SLACK_CLIENT_ID</code>, <code>SLACK_CLIENT_SECRET</code>, <code>SLACK_SIGNING_SECRET</code>. Then redeploy.</li>
+          <li>Back in Slack, open <b>Manage Distribution</b> and select <b>Activate Public Distribution</b>, so other agencies can add the app to their own Slack.</li>
+        </ol>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-foot"><div class="wrap"><div><b>Scope Ledger</b>. Shared conversations are kept in your inbox for up to 30 days, with phone numbers and email addresses hidden.</div><div><a href="/privacy.html">Privacy</a></div></div></footer>
+  <script src="/connect.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scope Ledger · Know if a client request fits the package before you say yes</title>
+  <meta name="description" content="Scope Ledger reads a new client request against the scope you agreed, quotes the lines that matter and drafts a reply that protects both your margin and the relationship.">
+  <meta property="og:title" content="Scope Ledger">
+  <meta property="og:description" content="Know if a client request fits the package before you say yes.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Caveat:wght@600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-head">
+    <div class="wrap">
+      <a class="logo" href="/" aria-label="Scope Ledger home">
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="2" width="22" height="24" rx="4" fill="#fff" stroke="#172033" stroke-width="2"/><rect x="7" y="9" width="14" height="4" rx="1" fill="#ffe15a"/><path d="M8 18h12M8 22h8" stroke="#172033" stroke-width="2" stroke-linecap="round"/></svg>
+        Scope Ledger
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a class="hide-sm" href="#how">How it works</a>
+        <a class="hide-sm" href="#pricing">Pricing</a>
+        <a class="hide-sm" href="#faq">FAQ</a>
+        <a class="hide-sm" href="/connect.html">Connect</a>
+        <a class="btn sm" href="/app.html">Open the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1>Your client just asked for <span class="q">“one small thing”.</span></h1>
+          <p class="lede">Scope Ledger reads the week's WhatsApp or email thread against what each client actually pays for. It catches every extra, keeps count of the monthly allowance and turns the extras into a priced add-on. Your client doesn't change a thing.</p>
+          <div class="hero-ctas">
+            <a class="btn" href="/app.html">Scan a chat</a>
+            <a class="btn ghost" href="#pricing">See pricing</a>
+          </div>
+          <p class="hero-note">Try it without signing up. Phone numbers and emails are hidden before any analysis.</p>
+        </div>
+
+        <figure class="proof anim" aria-label="Example: a client email marked up by Scope Ledger" style="margin:0">
+          <div class="mail">
+            <div class="mail-top"><span><b>From:</b> Marta, Lumen Skincare</span><span><b>Subject:</b> quick favour for this week</span></div>
+            <div class="mail-body">
+              <p>Hi! Loving this month's posts. Could you also create <span class="mark m1">four vertical videos for TikTok</span><sup class="ref">1</sup> <span class="mark m2">by Friday</span><sup class="ref">2</sup>? And maybe <span class="mark m3">a third round of edits</span><sup class="ref">3</sup> on the launch carousel. Thanks so much!</p>
+            </div>
+            <ol class="notes">
+              <li class="note n1"><span class="pen">TikTok and video aren't in the package</span></li>
+              <li class="note n2"><span class="pen">No deadline was agreed</span></li>
+              <li class="note n3"><span class="pen">The package has two rounds</span></li>
+            </ol>
+          </div>
+          <div class="scope-strip"><b>Agreed scope:</b> 12 posts/month on Instagram &amp; LinkedIn, static images and carousels, two rounds of revisions.</div>
+          <span class="stamp likely_out_of_scope">Likely out of scope</span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="section" id="problem">
+      <div class="wrap split">
+        <div>
+          <div class="section-head" style="margin-bottom:0">
+            <h2>Scope creep never arrives as one big ask.</h2>
+            <p class="lede" style="margin-top:16px">It shows up as friendly, reasonable favours, written in a hurry and answered in a hurry. Each one feels too small to question. Together they quietly eat the margin of the account.</p>
+          </div>
+          <ul class="research">
+            <li>59% of agency leaders say client demands limit their profitability, and more than half don't complete projects profitably every week.<cite>Teamwork &amp; G2, State of Agency Operations 2024 <a href="#ref1">[1]</a></cite></li>
+            <li>57% of agencies report losing between $1,000 and $5,000 a month to unbilled scope creep.<cite>Ignition, 2025 Agency Pricing and Cash Flow Report, US survey of 273 agencies <a href="#ref2">[2]</a></cite></li>
+          </ul>
+        </div>
+        <div>
+          <div class="ledger" role="table" aria-label="Illustrative month of small requests">
+            <div class="ledger-row" role="row"><span role="cell">“Can you add Stories as well?”</span><span role="cell">+1.5 h</span></div>
+            <div class="ledger-row" role="row"><span role="cell">“Just one more round of edits”</span><span role="cell">+2 h</span></div>
+            <div class="ledger-row" role="row"><span role="cell">“Quick resize for the LinkedIn ad”</span><span role="cell">+1 h</span></div>
+            <div class="ledger-row" role="row"><span role="cell">“Could someone watch comments this weekend?”</span><span role="cell">+4 h</span></div>
+            <div class="ledger-row" role="row"><span role="cell">“A TikTok version, if it's easy?”</span><span role="cell">+3 h</span></div>
+            <div class="ledger-total" role="row"><span role="cell">One client, one month</span><span role="cell">11.5 h unbilled</span></div>
+          </div>
+          <p class="small" style="margin-top:12px">Illustrative example. At €50 an hour that is €575 of work nobody invoiced, from a single account.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section class="section" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Two minutes a week per client.</h2>
+          <p class="lede">No integrations to set up and nothing new for your clients. They keep writing where they always do; you drop the conversation into Scope Ledger once a week.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><h3>Save each client once</h3><p>Their package, monthly allowances and contract end date. Scope Ledger keeps count of what has already been delivered this month.</p></div>
+          <div class="step"><h3>Drop in the week's chat</h3><p>Export the client's WhatsApp group in three taps, or paste an email or Slack thread. Scope Ledger finds every request in it, dated and attributed.</p></div>
+          <div class="step"><h3>Log, reply and bill</h3><p>Included work updates the allowance, extras go to the month's ledger, and one reply covers it all. At month end, send the add-on proposal.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section class="section">
+      <div class="wrap split">
+        <div>
+          <div class="section-head" style="margin-bottom:36px">
+            <h2>Everything you need to answer, on one screen.</h2>
+          </div>
+          <ul class="features">
+            <li><h3>Every request in the chat, found for you</h3><p>Drop in a WhatsApp export or an email thread. Each ask is listed with who asked and when, and marked included, to clarify or likely extra.</p></li>
+            <li><h3>Evidence you can check</h3><p>Every reason quotes your own text, and Scope Ledger verifies each quote against what you pasted. If a quote can't be found, it tells you.</p></li>
+            <li><h3>It remembers every client</h3><p>Saved packages, usage counters and contract dates. When a client has used 50 of 50 stories, Scope Ledger knows that three more is extra, and warns you when a package has expired.</p></li>
+            <li><h3>The questions that matter</h3><p>What to confirm before you commit, like whether the videos replace planned posts or come on top.</p></li>
+            <li><h3>A reply in your voice, in six languages</h3><p>English, Portuguese, French, Spanish, German or Italian. Make it warmer, firmer or shorter with one click.</p></li>
+            <li><h3>An extras ledger that pays for itself</h3><p>Extras pile up per client and month. Put a price on each one and send a ready-written add-on proposal, or use the record at renewal.</p></li>
+          </ul>
+        </div>
+        <div class="result" aria-label="Sample Scope Ledger result">
+          <div class="r-head">
+            <div class="r-top"><span class="stamp likely_out_of_scope">Likely out of scope</span><span class="mode">Sample</span></div>
+            <p class="r-summary">The request adds a new channel, a new format and a deadline that the written package does not include.</p>
+            <p class="r-meta">Confidence: high. Next step: propose a change.</p>
+          </div>
+          <div class="r-block">
+            <h3>Why</h3>
+            <ul class="reasons">
+              <li><span class="dim">Channel</span><div><p class="claim">The package names only Instagram and LinkedIn.</p><p class="quote"><span class="from">Scope</span><mark>12 posts per month on Instagram and LinkedIn</mark></p></div></li>
+              <li><span class="dim">Format</span><div><p class="claim">Static images and carousels, not video.</p><p class="quote"><span class="from">Scope</span><mark>static images and carousels</mark></p></div></li>
+            </ul>
+          </div>
+          <div class="r-block">
+            <h3>Change to propose</h3>
+            <ul class="r-list"><li><b>TikTok vertical videos</b>: 4 short-form videos, length and editing to be agreed</li></ul>
+          </div>
+          <div class="r-block">
+            <h3>Suggested reply</h3>
+            <p style="margin:0">Thanks for thinking of us for TikTok, it's a great channel to test. Our current package covers 12 monthly posts for Instagram and LinkedIn, so vertical video would be a new addition. Would you like a short proposal for the four videos before we start?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="section" id="calculator">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What do the “small favours” cost you?</h2>
+          <p class="lede">Move the sliders to match a typical month. These are your numbers, not our promise.</p>
+        </div>
+        <div class="calc">
+          <div>
+            <div class="field"><label for="c-req">Unplanned client requests per month: <output id="o-req">12</output></label><input type="range" id="c-req" min="1" max="60" value="12"></div>
+            <div class="field"><label for="c-hrs">Average hours each one takes: <output id="o-hrs">1.5</output></label><input type="range" id="c-hrs" min="0.5" max="6" step="0.5" value="1.5"></div>
+            <div class="field"><label for="c-share">Share you end up absorbing unbilled: <output id="o-share">50%</output></label><input type="range" id="c-share" min="10" max="100" step="5" value="50"></div>
+            <div class="field" style="margin-bottom:0"><label for="c-rate">Your hourly rate (€): <output id="o-rate">50</output></label><input type="range" id="c-rate" min="20" max="150" step="5" value="50"></div>
+          </div>
+          <div class="calc-out" aria-live="polite">
+            <p>Work you currently give away each month</p>
+            <div class="calc-big" id="c-total">€450</div>
+            <p id="c-hours">9 hours of unbilled work</p>
+            <p id="c-compare">Scope Ledger Studio costs <strong>€19 a month</strong>. Catching a single favour usually covers it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Simple pricing for small agencies.</h2>
+          <p class="lede">Start free. Upgrade when Scope Ledger is part of how your team replies to clients.</p>
+        </div>
+        <div class="billing" role="group" aria-label="Billing period">
+          <button type="button" data-period="monthly" aria-pressed="true">Monthly</button>
+          <button type="button" data-period="annual" aria-pressed="false">Annual, save 20%</button>
+        </div>
+        <div class="plans">
+          <article class="plan">
+            <h3>Free</h3>
+            <p class="for">For freelancers trying it with one client.</p>
+            <div class="price">€0<small> / month</small></div>
+            <div class="billed">Free forever</div>
+            <ul><li>1 client</li><li>Weekly chat scans</li><li>Single request checks</li></ul>
+            <a class="btn ghost" href="/app.html">Start free</a>
+          </article>
+          <article class="plan featured">
+            <span class="flag">Most popular</span>
+            <h3>Studio</h3>
+            <p class="for">For an account manager running several retainers.</p>
+            <div class="price" data-monthly="19" data-annual="15">€19<small> / month</small></div>
+            <div class="billed" data-monthly="Billed monthly" data-annual="€180 billed yearly">Billed monthly</div>
+            <ul><li>Up to 10 clients</li><li>Weekly chat scans</li><li>Allowance counters and extras ledger</li><li>Monthly add-on proposals</li><li>Replies in 6 languages, with tone rewrites</li></ul>
+            <a class="btn" href="mailto:afonso.soares@sciencespo.fr?subject=Scope Ledger%20Studio%20pilot">Join the pilot</a>
+          </article>
+          <article class="plan">
+            <h3>Agency</h3>
+            <p class="for">For teams of up to 10 who want every reply to be consistent.</p>
+            <div class="price" data-monthly="49" data-annual="39">€49<small> / month</small></div>
+            <div class="billed" data-monthly="Billed monthly" data-annual="€468 billed yearly">Billed monthly</div>
+            <ul><li>Unlimited clients, fair use</li><li>Up to 10 team members</li><li>Shared client files and ledgers</li><li>WhatsApp and Slack sharing to a team inbox</li><li>Priority support</li></ul>
+            <a class="btn ghost" href="mailto:afonso.soares@sciencespo.fr?subject=Scope Ledger%20Agency%20pilot">Join the pilot</a>
+          </article>
+        </div>
+        <div class="pilot">
+          <p><b>Founding agency pilot.</b> The first 10 agencies get three months of Agency free in exchange for a short monthly feedback call. Paid plans open when the pilot ends.</p>
+          <a class="btn sm" href="mailto:afonso.soares@sciencespo.fr?subject=Scope Ledger%20founding%20pilot">Apply for the pilot</a>
+        </div>
+        <p class="small" style="margin-top:14px">Prices exclude VAT. Paid plans open after the founding-agency pilot.</p>
+      </div>
+    </section>
+
+    <!-- LIMITS -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head"><h2>Built to support your judgement, not replace it.</h2></div>
+        <ul class="limits">
+          <li><b>It never sends anything.</b>Every reply is a draft. You read it, edit it and send it yourself.</li>
+          <li><b>It doesn't invent terms.</b>No prices, hours or deadlines that aren't in your text. Missing information becomes a question.</li>
+          <li><b>It isn't legal advice.</b>The verdict is an operational reading of the text you paste, not a ruling on your contract.</li>
+          <li><b>It doesn't keep your data.</b>Shared chats are masked for phone numbers and emails, kept in your inbox for 30 days at most, and never used by Scope Ledger to train AI.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap" style="max-width:860px">
+        <div class="section-head"><h2>Questions</h2></div>
+        <div class="faq">
+          <details><summary>Do my clients need to do anything differently?</summary><p>No. They keep using WhatsApp, email or Slack exactly as today. Only the account manager uses Scope Ledger, for a couple of minutes a week per client.</p></details>
+          <details><summary>How do chats get into Scope Ledger?</summary><p>From WhatsApp, export the client's chat and share it to Scope Ledger: on iPhone with a one-time Shortcut, on Android by installing the app from your browser. From Slack, use “Send to Scope Ledger” on any message. Everything lands in your team's inbox, matched to the right client. WhatsApp doesn't allow outside tools to read your groups directly, so nothing is read without you sharing it.</p></details>
+          <details><summary>How is this different from asking ChatGPT?</summary><p>A general chatbot gives you an opinion. Scope Ledger follows one method every time: it splits the request into separate asks, checks each against quantity, channel, format, revisions, timing and service, quotes your text as evidence and verifies those quotes, then gives you a reply and a change proposal in a fixed format your whole team can rely on.</p></details>
+          <details><summary>Does it know what we've already delivered?</summary><p>Yes. Each saved client has monthly allowances with a usage counter, plus the date the package ends. Every check uses those numbers, so a request that would go over the limit, or arrives after the contract ended, is flagged before you reply.</p></details>
+          <details><summary>Do I need to upload my contract?</summary><p>No. Paste the part of the proposal or package that describes what you deliver. The more specific it is about quantities, channels and revisions, the sharper the reading.</p></details>
+          <details><summary>What if the request is vague?</summary><p>Then Scope Ledger says so. It marks the request as ambiguous and gives you the exact questions to ask, instead of guessing.</p></details>
+          <details><summary>Which AI do you use, and what happens to my text?</summary><p>Analyses run on Anthropic's Claude models through their commercial API. Your text is sent once to produce the result and is not stored by Scope Ledger. See the <a href="/privacy.html">privacy page</a>.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <h2>Stop giving away the “one small things”.</h2>
+        <a class="btn" href="/app.html">Scan your first chat</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div>
+        <b>Scope Ledger</b>. A prototype built as an entrepreneurship project. Results are indicative and need human review.
+        <ol>
+          <li id="ref1"><a href="https://www.teamwork.com/resources/state-of-agency-operations/" rel="noopener">Teamwork &amp; G2, The State of Agency Operations 2024</a></li>
+          <li id="ref2"><a href="https://www.ignitionapp.com/news/2025-agency-pricing-cashflow-report" rel="noopener">Ignition, 2025 Agency Pricing and Cash Flow Report</a></li>
+        </ol>
+      </div>
+      <div><a href="/privacy.html">Privacy</a></div>
+    </div>
+  </footer>
+  <script src="/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App · Scope Ledger</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#172033">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <meta name="apple-mobile-web-app-title" content="Scope Ledger">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Caveat:wght@600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-head">
+    <div class="wrap">
+      <a class="logo" href="/" aria-label="Scope Ledger home">
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="2" width="22" height="24" rx="4" fill="#fff" stroke="#172033" stroke-width="2"/><rect x="7" y="9" width="14" height="4" rx="1" fill="#ffe15a"/><path d="M8 18h12M8 22h8" stroke="#172033" stroke-width="2" stroke-linecap="round"/></svg>
+        Scope Ledger
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a class="hide-sm" href="/#how">How it works</a>
+        <a class="hide-sm" href="/#pricing">Pricing</a>
+        <a href="/connect.html">Connect</a>
+        <a href="/privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="app">
+    <div class="wrap">
+      <div class="app-head">
+        <div>
+          <h1>Your clients' requests, checked</h1>
+          <p>Drop in the week's WhatsApp or email conversation, or check a single request. Scope Ledger finds every ask, checks it against the package and keeps a ledger of extras.</p>
+        </div>
+      </div>
+
+      <div class="bench">
+        <form id="form" class="panel" novalidate>
+          <div class="wsbar" id="wsbar"></div>
+
+          <div class="clients">
+            <div class="client-row">
+              <label for="client">Client</label>
+              <div class="client-pick">
+                <select id="client" aria-describedby="client-hint"></select>
+                <button type="button" class="btn ghost xs" id="edit-client">Edit</button>
+                <button type="button" class="btn ghost xs" id="new-client">New client</button>
+              </div>
+            </div>
+            <p class="hint" id="client-hint">Save each client's package once. Scope Ledger then checks every request against it, including what's already been used this month.</p>
+            <div id="client-info"></div>
+            <div id="client-editor" hidden></div>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="What do you want to do?">
+            <button type="button" role="tab" id="tab-scan" aria-controls="scan-fields" aria-selected="true">Scan a chat</button>
+            <button type="button" role="tab" id="tab-check" aria-controls="check-fields" aria-selected="false">Check one request</button>
+          </div>
+
+          <div class="presets" id="check-presets" role="group" aria-labelledby="presets-label" hidden>
+            <span class="label" id="presets-label">Start from an example</span>
+            <button type="button" class="chip" data-preset="tiktok">TikTok videos by Friday</button>
+            <button type="button" class="chip" data-preset="carousel">Swap a post for a carousel</button>
+            <button type="button" class="chip" data-preset="launch">“A few more” for the launch</button>
+            <button type="button" class="chip" data-preset="stories">3 more stories, limit reached</button>
+          </div>
+
+          <div class="field">
+            <label for="scope">What you agreed</label>
+            <p class="hint" id="scope-hint">Deliverables, quantities, channels, revision rounds and deadlines. Filled in automatically when you pick a saved client.</p>
+            <textarea id="scope" aria-describedby="scope-hint scope-err"></textarea>
+            <div class="row"><span class="err" id="scope-err" aria-live="polite"></span><span class="count" id="scope-count" aria-hidden="true"></span></div>
+          </div>
+
+          <div class="field" id="scan-fields" role="tabpanel" aria-labelledby="tab-scan">
+            <div class="row"><label for="chat">The conversation</label><button type="button" class="link-btn" id="load-chat-example">Use the example chat</button></div>
+            <p class="hint" id="chat-hint">In WhatsApp, open the client's group, then Export chat, Without media, and drop the file here. You can also paste an email thread or a few messages.</p>
+            <div class="drop" id="drop">
+              <input type="file" id="chat-file" accept=".txt,.zip,text/plain,application/zip" class="sr-only">
+              <label for="chat-file" class="btn ghost xs">Choose export file</label>
+              <span class="drop-text">or drop a .txt or .zip export here</span>
+            </div>
+            <textarea id="chat" aria-describedby="chat-hint chat-err chat-note" style="min-height:170px" placeholder="[11/11/2026, 09:15] Client: Could we add two more posts this month?"></textarea>
+            <div class="row"><span class="err" id="chat-err" aria-live="polite"></span><span class="count" id="chat-count" aria-hidden="true"></span></div>
+            <p class="hint" id="chat-note" style="margin:4px 0 0">Phone numbers and email addresses are hidden before analysis. Long chats are trimmed to the most recent messages.</p>
+          </div>
+
+          <div class="field" id="check-fields" role="tabpanel" aria-labelledby="tab-check" hidden>
+            <label for="req">What the client asked</label>
+            <p class="hint" id="req-hint">Paste the message as they wrote it. Remove names and personal details.</p>
+            <textarea id="req" aria-describedby="req-hint req-err" style="min-height:120px"></textarea>
+            <div class="row"><span class="err" id="req-err" aria-live="polite"></span><span class="count" id="req-count" aria-hidden="true"></span></div>
+          </div>
+
+          <div class="two">
+            <div class="field">
+              <label for="lang">Reply language</label>
+              <select id="lang">
+                <option value="en">English</option>
+                <option value="pt">Portuguese (Portugal)</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+              </select>
+            </div>
+            <div class="field" id="code-field">
+              <label for="code">Access code</label>
+              <input id="code" type="password" autocomplete="off" placeholder="For live AI" aria-describedby="code-hint">
+              <p class="hint" id="code-hint" style="margin:6px 0 0">Without a code you'll see a labelled simulation.</p>
+            </div>
+          </div>
+
+          <button class="btn go" type="submit" id="go">Scan this chat</button>
+          <p class="privacy-line">Nothing you paste is stored. Scope Ledger gives an indicative reading that you should review before replying.</p>
+          <div id="alert" class="alert" role="alert" hidden></div>
+        </form>
+
+        <section id="out" aria-live="polite" aria-label="Result">
+          <div class="empty" id="empty">
+            <span class="pen">Your results will appear here</span>Pick a client, drop in the week's chat, then select “Scan this chat”.
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap"><div><b>Scope Ledger</b>. Prototype. Results are indicative and need human review.</div><div><a href="/privacy.html">Privacy</a></div></div>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>
